@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/LandingPage.module.scss";
+import hairPull from "../public/img/hair-photo-1-2-x.png";
 
 export default function LandingPage() {
   return (
@@ -30,16 +31,24 @@ export default function LandingPage() {
         <div className={styles.content}>
           <h3>What we can help with</h3>
           <div className={styles.itemWithImgOnLeft}>
-            <h6>HAIR LOSS</h6>
+            <div className={styles.imagesContainer}>
+              <div className={styles.imageContainer}>
+                <Image src={hairPull} alt="Man pulling on his hair"></Image>
+              </div>
+              <div className={styles.numberContainer}>01</div>
+            </div>
+
+            {/* <h6>HAIR LOSS</h6>
             <p>Hair loss needn’t be irreversible. We can help!</p>
-            <p>
+            <p> 
               Hair loss needn’t be irreversible. There’s a scientifically proven
               way that’s most effective in keeping and regrowing your hair. It’s
               all to do with blocking a pesky hormone called DHT. That’s the bad
               guy behind hair loss. And you can keep him at bay. The choice is
               yours.
-            </p>
+            </p> */}
           </div>
+
           <div className={styles.itemWithImgOnRight}>
             <h6>ERECTILE DYSFUNCTION</h6>
             <p>Erections can be a tricky thing. But no need to feel down!</p>
