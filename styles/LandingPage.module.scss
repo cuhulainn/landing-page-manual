@@ -1,0 +1,72 @@
+@import "main";
+
+.landingPageContainer {
+  @include flexbox();
+  @include flex-direction(column);
+  font-weight: 100;
+  text-align: left;
+  width: 100%;
+  color: $pine-green;
+
+  .contentContainer {
+    .header {
+      background-image: url("../public/img/hair-cat-header.png");
+      position: relative;
+      @include flexbox();
+      @include flex-direction(column);
+      background-size: contain;
+      padding-bottom: 53.125%;
+      height: 0;
+
+      .headerContent {
+        width: 65%;
+        padding-left: 7%;
+
+        .headerLogo {
+          margin-top: 5%;
+          margin-bottom: 15%;
+          background-image: url("../public/img/manual-symblol.png");
+          background-size: contain;
+          width: 2.95vw;
+          height: 2.8vw;
+        }
+
+        h1 {
+          font-family: "Montserrat";
+          font-weight: 700;
+          @include fluid-type(12px, 65px);
+          padding-bottom: 2%;
+        }
+
+        .headerText {
+          @include fluid-type(6px, 16px);
+          width: 80%;
+          padding-top: 2%;
+          padding-bottom: 4%;
+        }
+
+        button {
+          background-color: $teal-highlight;
+          color: $white;
+          border-radius: 4em;
+          width: 40%;
+          letter-spacing: 2px;
+          padding: 2% 5%;
+          border: none;
+          font-family: "Montserrat";
+          @include fluid-type(6px, 12px);
+          margin-bottom: 10%;
+        }
+      }
+    }
+    .content {
+      .itemWithImgOnLeft {
+      }
+      .itemWithImgOnRight {
+      }
+    }
+  }
+}
+
+.footerContainer {
+}
