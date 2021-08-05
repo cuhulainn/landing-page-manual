@@ -35,6 +35,8 @@ export default function LandingPage() {
     }
   };
 
+  const isSelectedOption = () => {};
+
   const handleBackButtonClick = () => {
     const previousQuestion = currentQuestion - 1;
     setCurrentQuestion(previousQuestion);
@@ -44,26 +46,33 @@ export default function LandingPage() {
     <>
       {showQuiz ? (
         showResult ? (
-          <>
-            <div>Result</div>
+          <div className={styles.resultContainer}>
+            <div className={styles.resultHeader}>
+              <h3>Result</h3>
+            </div>
             {isRejection ? (
-              <div>
-                Unfortunately, we are unable to prescribe this medication for
-                you. This is because finasteride can alter the PSA levels, which
-                may be used to monitor for cancer. You should discuss this
-                further with your GP or specialist if you would still like this
-                medication.
+              <div className={styles.resultText}>
+                <p>
+                  Unfortunately, we are unable to prescribe this medication for
+                  you. This is because finasteride can alter the PSA levels,
+                  which may be used to monitor for cancer. You should discuss
+                  this further with your GP or specialist if you would still
+                  like this medication.
+                </p>
               </div>
             ) : (
-              <div>
-                Great news! We have the perfect treatment for your hair loss.
-                Proceed to <a href="https://www.manual.co">www.manual.co</a>,
-                and prepare to say hello to your new hair!
+              <div className={styles.resultText}>
+                <p className={styles.successText}>
+                  Great news! <br /> We have the perfect treatment for your hair
+                  loss. Proceed to{" "}
+                  <a href="https://www.manual.co">www.manual.co</a>, and prepare
+                  to say hello to your new hair!
+                </p>
               </div>
             )}
-          </>
+          </div>
         ) : (
-          <>
+          <div className={styles.quizContainer}>
             <div className={styles.questionContainer}>
               <div className={styles.questionCount}>
                 <span>Question {currentQuestion + 1}</span> of{" "}
@@ -77,6 +86,11 @@ export default function LandingPage() {
               {questions[currentQuestion].options.map((option, index) => (
                 <div className={styles.answerOptionContainer} key={index}>
                   <button
+                    className={`${styles.answerOption} ${
+                      option.value === answers[`answer${currentQuestion}`]
+                        ? styles.selectedOption
+                        : null
+                    }`}
                     onClick={() =>
                       handleAnswerOptionClick(option.isRejection, option.value)
                     }
@@ -91,9 +105,14 @@ export default function LandingPage() {
               ))}
             </div>
             {currentQuestion === 0 ? null : (
-              <button onClick={handleBackButtonClick}>Back</button>
+              <button
+                className={styles.backButton}
+                onClick={handleBackButtonClick}
+              >
+                &#x2039; Back
+              </button>
             )}
-          </>
+          </div>
         )
       ) : (
         <div className={styles.landingPageContainer}>
@@ -174,7 +193,11 @@ export default function LandingPage() {
           </main>
 
           <footer className={styles.footerContainer}>
-            <div>Footer section</div>
+            <div>
+              <div className={styles.copyright}>
+                <span>© 2019 Manual. All rights reserved.</span>
+              </div>
+            </div>
           </footer>
         </div>
       )}
