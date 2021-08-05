@@ -4,6 +4,10 @@ import { useState } from "react";
 import styles from "../styles/LandingPage.module.scss";
 import hairPull from "../public/img/hair-photo-1-2-x.png";
 import intertwinedHands from "../public/img/sex-photo-1-2-x.png";
+import logo from "../public/img/manual-symblol.png";
+import facebook from "../public/img/shape.png";
+import twitter from "../public/img/shape_2.png";
+import linkedIn from "../public/img/shape_3.png";
 import quiz from "../resources/quiz.json";
 
 export default function LandingPage() {
@@ -34,8 +38,6 @@ export default function LandingPage() {
       setShowResult(true);
     }
   };
-
-  const isSelectedOption = () => {};
 
   const handleBackButtonClick = () => {
     const previousQuestion = currentQuestion - 1;
@@ -193,10 +195,45 @@ export default function LandingPage() {
           </main>
 
           <footer className={styles.footerContainer}>
-            <div>
-              <div className={styles.copyright}>
-                <span>© 2019 Manual. All rights reserved.</span>
+            <div className={styles.contentContainer}>
+              <div className={styles.footerLogo}>
+                <Image src={logo} alt="logo" height="60vh" width="60vh"></Image>
               </div>
+              <div className={styles.navLinksContainer}>
+                <div className={styles.navLinksColumn}>
+                  <h6>PRODUCT</h6>
+                  <p>Popular</p>
+                  <p>Trending</p>
+                  <p>Guided</p>
+                  <p>Products</p>
+                </div>
+                <div className={styles.navLinksColumn}>
+                  <h6>COMPANY</h6>
+                  <p>Press Releases</p>
+                  <p>Mission</p>
+                  <p>Strategy</p>
+                  <p>About</p>
+                </div>
+                <div className={styles.navLinksColumn}>
+                  <h6>INFO</h6>
+                  <p>Support</p>
+                  <p>Customer Service</p>
+                  <p>Get Started Guide</p>
+                </div>
+                <div className={styles.socialLinksColumn}>
+                  <h6>FOLLOW US</h6>
+                  <div className={styles.socialLinkImageContainer}>
+                    <Image alt="Facebook Logo" src={facebook} />
+                    <Image alt="Twitter Logo" src={twitter} />
+                    <Image alt="LinkedIn Logo" src={linkedIn} />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.line}></div>
+            <div className={styles.copyright}>
+              <span>© 2019 Manual. All rights reserved.</span>
             </div>
           </footer>
         </div>
