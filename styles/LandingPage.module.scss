@@ -56,6 +56,11 @@
           font-family: "Montserrat";
           @include fluid-type(6px, 12px);
           margin-bottom: 10%;
+
+          &:hover {
+            background-color: $teal-muted;
+            color: $brownish-grey-50;
+          }
         }
       }
     }
@@ -76,6 +81,7 @@
 
         padding-left: 15%;
         padding-right: 15%;
+        padding-bottom: 4%;
 
         .contentContainer {
           display: grid;
@@ -128,7 +134,7 @@
         @include justify-content(center);
         padding-left: 15%;
         padding-right: 15%;
-        padding-top: 4%;
+        padding-bottom: 4%;
 
         .contentContainer {
           display: grid;
@@ -182,16 +188,72 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  @include flexbox();
-  @include flex-direction(column);
   background-color: $teal-muted;
   color: white;
+  @include flexbox();
+  @include flex-direction(column);
 
+  .contentContainer {
+    @include flexbox();
+    @include flex-direction(row);
+
+    .footerLogo {
+      margin-top: 3%;
+      margin-left: 5%;
+    }
+
+    .navLinksContainer {
+      @include flexbox();
+      @include flex-direction(row);
+      @include flex-wrap(wrap);
+      @include justify-content(flex-end);
+      width: 100%;
+      margin-top: 3%;
+      h6 {
+        font-family: Montserrat;
+        color: $teal-highlight;
+        @include fluid-type(9px, 12px);
+        margin-bottom: 20px;
+      }
+      .navLinksColumn {
+        padding-right: 5%;
+        padding-left: 5%;
+        p {
+          @include fluid-type(10px, 14px);
+          font-family: Helvetica;
+          color: $pine-green;
+          line-height: 230%;
+        }
+      }
+      .socialLinksColumn {
+        padding-right: 15%;
+        padding-bottom: 5%;
+        .socialLinkImageContainer {
+          @include flexbox();
+          @include flex-direction(row);
+          @include flex-wrap(wrap);
+          @include justify-content(space-between);
+          min-width: 75px;
+        }
+      }
+    }
+  }
+
+  .line {
+    width: 90%;
+    height: 1px;
+    opacity: 0.3;
+    border: solid 1px #6c6c6c;
+    align-self: center;
+    margin-top: 1%;
+    margin-bottom: 1%;
+  }
   .copyright {
     font-family: "Open Sans", sans-serif;
     color: $brownish-grey-50;
     @include fluid-type(8px, 12px);
     text-align: center;
+    padding-bottom: 1%;
   }
 }
 
