@@ -1,0 +1,33 @@
+@import "../styles/main";
+
+.resultContainer {
+  color: $pine-green;
+  @include flexbox();
+  @include flex-direction(column);
+  @include align-items(center);
+  font-family: Helvetica, sans-serif;
+  margin-top: 1%;
+  .resultHeader {
+    font-family: Montserrat;
+    @include fluid-type(24px, 30px);
+    margin: 2%;
+    text-decoration: underline;
+  }
+  .resultText {
+    @include fluid-type(20px, 24px);
+    max-width: 550px;
+    text-align: center;
+    line-height: 140%;
+    padding-left: 5%;
+    padding-right: 5%;
+    .successText {
+      @include fluid-type(20px, 24px);
+      padding-left: 5%;
+      padding-right: 5%;
+      line-height: 140%;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
