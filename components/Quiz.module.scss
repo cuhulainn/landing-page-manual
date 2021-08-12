@@ -1,0 +1,84 @@
+@import "../styles/main";
+
+.quizContainer {
+  color: $pine-green;
+  @include flexbox();
+  @include flex-direction(column);
+  @include align-items(center);
+  font-family: Helvetica, sans-serif;
+  margin-top: 1%;
+  .questionContainer {
+    @include flexbox();
+    @include flex-direction(column);
+    @include align-items(center);
+    margin-top: 2%;
+    margin-right: 2%;
+    margin-left: 2%;
+    .questionCount {
+      font-family: Montserrat;
+      @include fluid-type(12px, 24px);
+      margin: 4%;
+      text-decoration: underline;
+    }
+    .questionText {
+      @include fluid-type(12px, 24px);
+      text-align: center;
+      max-width: 750px;
+      margin-left: 20%;
+      margin-right: 20%;
+      margin-bottom: 2%;
+    }
+  }
+  .answersContainer {
+    @include flexbox();
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include justify-content(center);
+    margin: 1%;
+    max-width: 600px;
+    min-width: 250px;
+    .answerOptionContainer {
+      @include flexbox();
+      @include flex-direction(row);
+      margin: 0.5%;
+      .answerOption {
+        @include fluid-type(16px, 36px);
+        font-family: Montserrat;
+        background-color: $teal-muted;
+        border-style: inset;
+        border-color: $brownish-grey-50;
+        padding: 10%;
+        margin: 1%;
+        min-width: 190px;
+        &:hover {
+          background-color: $teal-medium;
+          border-style: outset;
+          border-color: gainsboro;
+        }
+      }
+      .selectedOption {
+        background-color: $teal-highlight;
+        border-style: outset;
+        border-color: gainsboro;
+      }
+    }
+  }
+  .backButton {
+    @include fluid-type(12px, 18px);
+    align-self: flex-start;
+    margin-top: 4%;
+    margin-left: 30%;
+    background-color: rgba(255, 0, 0, 0.13);
+    color: $pine-green;
+    border-radius: 4rem;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    padding-right: 1%;
+    padding-left: 1%;
+    border: black solid 1px;
+    max-width: fit-content;
+    span {
+      @include fluid-type(18px, 24px);
+    }
+  }
+}

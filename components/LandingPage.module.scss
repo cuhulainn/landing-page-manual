@@ -1,0 +1,266 @@
+@import "../styles/main";
+
+.landingPageContainer {
+  @include flexbox();
+  @include flex-direction(column);
+  font-weight: 100;
+  text-align: left;
+  width: 100%;
+  color: $pine-green;
+
+  .contentContainer {
+    .header {
+      background-image: url("../public/img/hair-cat-header.png");
+      position: relative;
+      @include flexbox();
+      @include flex-direction(column);
+      background-size: contain;
+      padding-bottom: 53.125%;
+      height: 0;
+
+      .headerContent {
+        width: 65%;
+        padding-left: 7%;
+
+        .headerLogo {
+          margin-top: 5%;
+          margin-bottom: 15%;
+          background-image: url("../public/img/manual-symblol.png");
+          background-size: contain;
+          width: 2.95vw;
+          height: 2.8vw;
+        }
+
+        h1 {
+          font-family: "Montserrat";
+          font-weight: 700;
+          @include fluid-type(16px, 65px);
+          padding-bottom: 2%;
+        }
+
+        .headerText {
+          @include fluid-type(8px, 16px);
+          width: 80%;
+          padding-top: 2%;
+          padding-bottom: 4%;
+        }
+
+        button {
+          background-color: $teal-highlight;
+          color: $white;
+          border-radius: 4em;
+          width: 40%;
+          letter-spacing: 2px;
+          padding: 2% 5%;
+          border: none;
+          font-family: "Montserrat";
+          @include fluid-type(6px, 12px);
+          margin-bottom: 10%;
+
+          &:hover {
+            background-color: $teal-muted;
+            color: $brownish-grey-50;
+          }
+        }
+      }
+    }
+
+    .content {
+      h3 {
+        font-family: Helvetica, sans-serif;
+        @include fluid-type(16px, 36px);
+        text-align: center;
+        margin-top: 5%;
+        margin-bottom: 5%;
+      }
+      .itemWithImgOnLeft {
+        @include flexbox();
+        @include flex-direction(row);
+        @include align-content(center);
+        @include justify-content(center);
+
+        padding-left: 15%;
+        padding-right: 15%;
+        padding-bottom: 4%;
+
+        .contentContainer {
+          display: grid;
+          position: relative;
+          grid-template-columns: repeat(12, 1fr);
+          align-items: center;
+          max-width: 800px;
+
+          .imageContainer {
+            grid-column: 1 / span 7;
+            grid-row: 1;
+            z-index: 1;
+          }
+          .numberContainer {
+            grid-column: 6 / -1;
+            grid-row: 1;
+            font-family: Montserrat;
+            color: #eeeeee;
+            @include fluid-type(100px, 360px);
+          }
+          .textContainer {
+            grid-column: 8 / -1;
+            grid-row: 1;
+            max-width: 100%;
+            margin-left: 1rem;
+            h6 {
+              font-family: Montserrat;
+              color: $teal-highlight;
+              margin-bottom: 7%;
+            }
+            .subtitle {
+              font-family: Helvetica, sans-serif;
+              @include fluid-type(14px, 22px);
+              margin-bottom: 7%;
+              line-height: 145%;
+            }
+            .description {
+              font-family: "Open Sans", sans-serif;
+              font-size: 12px;
+              line-height: 185%;
+            }
+          }
+        }
+      }
+
+      .itemWithImgOnRight {
+        @include flexbox();
+        @include flex-direction(row);
+        @include align-content(center);
+        @include justify-content(center);
+        padding-left: 15%;
+        padding-right: 15%;
+        padding-bottom: 4%;
+
+        .contentContainer {
+          display: grid;
+          position: relative;
+          grid-template-columns: repeat(12, 1fr);
+          align-items: center;
+          max-width: 800px;
+
+          .imageContainer {
+            grid-column: 7 / -1;
+            grid-row: 1;
+            z-index: 1;
+          }
+          .numberContainer {
+            grid-column: 1 / span 7;
+            grid-row: 1;
+            font-family: Montserrat;
+            color: #eeeeee;
+            @include fluid-type(100px, 360px);
+          }
+          .textContainer {
+            grid-column: 1 / span 5;
+            grid-row: 1;
+            max-width: 100%;
+            text-align: right;
+
+            h6 {
+              font-family: Montserrat;
+              color: $teal-highlight;
+              margin-bottom: 7%;
+              @include fluid-type(14px, 22px);
+            }
+            .subtitle {
+              font-family: Helvetica, sans-serif;
+              @include fluid-type(14px, 22px);
+              margin-bottom: 7%;
+              line-height: 145%;
+            }
+            .description {
+              font-family: "Open Sans", sans-serif;
+              font-size: 12px;
+              line-height: 185%;
+            }
+          }
+        }
+      }
+      .descriptionUnderImage {
+        font-family: "Open Sans", sans-serif;
+        font-size: 12px;
+        line-height: 185%;
+        grid-column: 1 / span 12;
+        grid-row: 2;
+        max-width: 100%;
+        text-align: center;
+        padding-bottom: 8%;
+      }
+    }
+  }
+}
+
+.footerContainer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: $teal-muted;
+  color: white;
+  @include flexbox();
+  @include flex-direction(column);
+
+  .contentContainer {
+    @include flexbox();
+    @include flex-direction(row);
+    .footerLogo {
+      margin-top: 3%;
+      margin-left: 5%;
+    }
+    .navLinksContainer {
+      @include flexbox();
+      @include flex-direction(row);
+      @include flex-wrap(wrap);
+      @include justify-content(flex-end);
+      width: 100%;
+      margin-top: 3%;
+      h6 {
+        font-family: Montserrat;
+        color: $teal-highlight;
+        @include fluid-type(9px, 12px);
+        margin-bottom: 20px;
+      }
+      .navLinksColumn {
+        padding-right: 5%;
+        padding-left: 5%;
+        p {
+          @include fluid-type(10px, 14px);
+          font-family: Helvetica;
+          color: $pine-green;
+          line-height: 230%;
+        }
+      }
+      .socialLinksColumn {
+        padding-right: 15%;
+        padding-bottom: 5%;
+        .socialLinkImageContainer {
+          @include flexbox();
+          @include flex-direction(row);
+          @include flex-wrap(wrap);
+          @include justify-content(space-between);
+          min-width: 75px;
+        }
+      }
+    }
+  }
+  .line {
+    width: 90%;
+    height: 1px;
+    opacity: 0.3;
+    border: solid 1px #6c6c6c;
+    align-self: center;
+    margin-top: 1%;
+    margin-bottom: 1%;
+  }
+  .copyright {
+    font-family: "Open Sans", sans-serif;
+    color: $brownish-grey-50;
+    @include fluid-type(8px, 12px);
+    text-align: center;
+    padding-bottom: 1%;
+  }
+}
