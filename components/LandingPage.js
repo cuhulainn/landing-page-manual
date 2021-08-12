@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Footer from "./Footer";
+import { useWindowSize } from "../hooks/useWindowSize";
 import styles from "./LandingPage.module.scss";
 
 //image imports
@@ -9,6 +10,8 @@ import hairPull from "../public/img/hair-photo-1-2-x.png";
 import intertwinedHands from "../public/img/sex-photo-1-2-x.png";
 
 function LandingPage({ showTheQuiz }) {
+  const width = useWindowSize().width;
+
   return (
     <div className={styles.landingPageContainer}>
       <Head>
@@ -48,15 +51,27 @@ function LandingPage({ showTheQuiz }) {
                 <p className={styles.subtitle}>
                   Hair loss needn’t be irreversible. We can help!
                 </p>
-                {/* {TODO: conditionally render below p tag based on viewport size} */}
-                <p className={styles.description}>
-                  Hair loss needn’t be irreversible. There’s a scientifically
-                  proven way that’s most effective in keeping and regrowing your
-                  hair. It’s all to do with blocking a pesky hormone called DHT.
-                  That’s the bad guy behind hair loss. And you can keep him at
-                  bay. The choice is yours.
-                </p>
+                {width > 760 ? (
+                  <p className={styles.description}>
+                    Hair loss needn’t be irreversible. There’s a scientifically
+                    proven way that’s most effective in keeping and regrowing
+                    your hair. It’s all to do with blocking a pesky hormone
+                    called DHT. That’s the bad guy behind hair loss. And you can
+                    keep him at bay. The choice is yours.
+                  </p>
+                ) : null}
               </div>
+              {width <= 760 ? (
+                <div className={styles.descriptionUnderImage}>
+                  <p>
+                    Hair loss needn’t be irreversible. There’s a scientifically
+                    proven way that’s most effective in keeping and regrowing
+                    your hair. It’s all to do with blocking a pesky hormone
+                    called DHT. That’s the bad guy behind hair loss. And you can
+                    keep him at bay. The choice is yours.
+                  </p>
+                </div>
+              ) : null}
             </div>
           </div>
 
@@ -71,13 +86,25 @@ function LandingPage({ showTheQuiz }) {
                 <p className={styles.subtitle}>
                   Erections can be a tricky thing. But no need to feel down!
                 </p>
-                {/* {TODO: conditionally render below p tag based on viewport size} */}
-                <p className={styles.description}>
-                  There are plenty of reasons why you might be having difficulty
-                  in the erection department. We can help you figure out
-                  possible reasons why. And prescribe a pill if needed.
-                </p>
+                {width > 760 ? (
+                  <p className={styles.description}>
+                    There are plenty of reasons why you might be having
+                    difficulty in the erection department. We can help you
+                    figure out possible reasons why. And prescribe a pill if
+                    needed.
+                  </p>
+                ) : null}
               </div>
+              {width <= 760 ? (
+                <div className={styles.descriptionUnderImage}>
+                  <p>
+                    There are plenty of reasons why you might be having
+                    difficulty in the erection department. We can help you
+                    figure out possible reasons why. And prescribe a pill if
+                    needed.
+                  </p>
+                </div>
+              ) : null}
             </div>
           </div>
         </div>

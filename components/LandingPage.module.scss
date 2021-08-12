@@ -34,12 +34,12 @@
         h1 {
           font-family: "Montserrat";
           font-weight: 700;
-          @include fluid-type(12px, 65px);
+          @include fluid-type(16px, 65px);
           padding-bottom: 2%;
         }
 
         .headerText {
-          @include fluid-type(6px, 16px);
+          @include fluid-type(8px, 16px);
           width: 80%;
           padding-top: 2%;
           padding-bottom: 4%;
@@ -68,7 +68,7 @@
     .content {
       h3 {
         font-family: Helvetica, sans-serif;
-        @include fluid-type(10px, 36px);
+        @include fluid-type(16px, 36px);
         text-align: center;
         margin-top: 5%;
         margin-bottom: 5%;
@@ -114,7 +114,7 @@
             }
             .subtitle {
               font-family: Helvetica, sans-serif;
-              @include fluid-type(10px, 22px);
+              @include fluid-type(14px, 22px);
               margin-bottom: 7%;
               line-height: 145%;
             }
@@ -159,17 +159,17 @@
             grid-column: 1 / span 5;
             grid-row: 1;
             max-width: 100%;
-            margin-left: 1rem;
             text-align: right;
 
             h6 {
               font-family: Montserrat;
               color: $teal-highlight;
               margin-bottom: 7%;
+              @include fluid-type(14px, 22px);
             }
             .subtitle {
               font-family: Helvetica, sans-serif;
-              @include fluid-type(10px, 22px);
+              @include fluid-type(14px, 22px);
               margin-bottom: 7%;
               line-height: 145%;
             }
@@ -181,9 +181,20 @@
           }
         }
       }
+      .descriptionUnderImage {
+        font-family: "Open Sans", sans-serif;
+        font-size: 12px;
+        line-height: 185%;
+        grid-column: 1 / span 12;
+        grid-row: 2;
+        max-width: 100%;
+        text-align: center;
+        padding-bottom: 8%;
+      }
     }
   }
 }
+
 .footerContainer {
   left: 0;
   bottom: 0;
@@ -196,12 +207,10 @@
   .contentContainer {
     @include flexbox();
     @include flex-direction(row);
-
     .footerLogo {
       margin-top: 3%;
       margin-left: 5%;
     }
-
     .navLinksContainer {
       @include flexbox();
       @include flex-direction(row);
