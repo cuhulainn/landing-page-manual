@@ -1,4 +1,4 @@
-@import "main";
+@import "../styles/main";
 
 .landingPageContainer {
   @include flexbox();
@@ -34,12 +34,12 @@
         h1 {
           font-family: "Montserrat";
           font-weight: 700;
-          @include fluid-type(12px, 65px);
+          @include fluid-type(16px, 65px);
           padding-bottom: 2%;
         }
 
         .headerText {
-          @include fluid-type(6px, 16px);
+          @include fluid-type(8px, 16px);
           width: 80%;
           padding-top: 2%;
           padding-bottom: 4%;
@@ -68,7 +68,7 @@
     .content {
       h3 {
         font-family: Helvetica, sans-serif;
-        @include fluid-type(10px, 36px);
+        @include fluid-type(16px, 36px);
         text-align: center;
         margin-top: 5%;
         margin-bottom: 5%;
@@ -114,7 +114,7 @@
             }
             .subtitle {
               font-family: Helvetica, sans-serif;
-              @include fluid-type(10px, 22px);
+              @include fluid-type(14px, 22px);
               margin-bottom: 7%;
               line-height: 145%;
             }
@@ -159,17 +159,17 @@
             grid-column: 1 / span 5;
             grid-row: 1;
             max-width: 100%;
-            margin-left: 1rem;
             text-align: right;
 
             h6 {
               font-family: Montserrat;
               color: $teal-highlight;
               margin-bottom: 7%;
+              @include fluid-type(14px, 22px);
             }
             .subtitle {
               font-family: Helvetica, sans-serif;
-              @include fluid-type(10px, 22px);
+              @include fluid-type(14px, 22px);
               margin-bottom: 7%;
               line-height: 145%;
             }
@@ -181,9 +181,20 @@
           }
         }
       }
+      .descriptionUnderImage {
+        font-family: "Open Sans", sans-serif;
+        font-size: 12px;
+        line-height: 185%;
+        grid-column: 1 / span 12;
+        grid-row: 2;
+        max-width: 100%;
+        text-align: center;
+        padding-bottom: 8%;
+      }
     }
   }
 }
+
 .footerContainer {
   left: 0;
   bottom: 0;
@@ -196,12 +207,10 @@
   .contentContainer {
     @include flexbox();
     @include flex-direction(row);
-
     .footerLogo {
       margin-top: 3%;
       margin-left: 5%;
     }
-
     .navLinksContainer {
       @include flexbox();
       @include flex-direction(row);
@@ -238,7 +247,6 @@
       }
     }
   }
-
   .line {
     width: 90%;
     height: 1px;
@@ -254,108 +262,5 @@
     @include fluid-type(8px, 12px);
     text-align: center;
     padding-bottom: 1%;
-  }
-}
-
-.quizContainer {
-  color: $pine-green;
-  @include flexbox();
-  @include flex-direction(column);
-  @include align-items(center);
-  font-family: Helvetica, sans-serif;
-  margin-top: 1%;
-  .questionContainer {
-    @include flexbox();
-    @include flex-direction(column);
-    @include align-items(center);
-    margin-top: 2%;
-    margin-right: 2%;
-    margin-left: 2%;
-    .questionCount {
-      font-family: Montserrat;
-      @include fluid-type(12px, 24px);
-      margin: 4%;
-      text-decoration: underline;
-    }
-    .questionText {
-      @include fluid-type(12px, 24px);
-      text-align: center;
-      max-width: 750px;
-      margin-left: 20%;
-      margin-right: 20%;
-      margin-bottom: 2%;
-    }
-  }
-  .answersContainer {
-    @include flexbox();
-    @include flex-direction(row);
-    @include flex-wrap(wrap);
-    @include justify-content(center);
-    @include justify-content(space-around);
-    margin: 1%;
-    max-width: 600px;
-    min-width: 250px;
-    .answerOptionContainer {
-      @include flexbox();
-      @include flex-direction(row);
-      margin: 0.5%;
-      .answerOption {
-        @include fluid-type(16px, 36px);
-        font-family: Montserrat;
-        background-color: $teal-muted;
-        padding: 3%;
-        margin: 1%;
-        &:hover {
-          background-color: $teal-medium;
-        }
-      }
-      .selectedOption {
-        background-color: $teal-highlight;
-        border-color: $pine-green;
-      }
-    }
-  }
-  .backButton {
-    @include fluid-type(12px, 36px);
-    align-self: flex-start;
-    margin-top: 4%;
-    margin-left: 30%;
-    background-color: $teal-highlight;
-    color: $white;
-    border-radius: 4rem;
-    padding: 1%;
-    border: none;
-  }
-}
-
-.resultContainer {
-  color: $pine-green;
-  @include flexbox();
-  @include flex-direction(column);
-  @include align-items(center);
-  font-family: Helvetica, sans-serif;
-  margin-top: 1%;
-  .resultHeader {
-    font-family: Montserrat;
-    @include fluid-type(24px, 30px);
-    margin: 2%;
-    text-decoration: underline;
-  }
-  .resultText {
-    @include fluid-type(20px, 24px);
-    max-width: 550px;
-    text-align: center;
-    line-height: 140%;
-    padding-left: 5%;
-    padding-right: 5%;
-    .successText {
-      @include fluid-type(20px, 24px);
-      padding-left: 5%;
-      padding-right: 5%;
-      line-height: 140%;
-      a {
-        text-decoration: none;
-      }
-    }
   }
 }
